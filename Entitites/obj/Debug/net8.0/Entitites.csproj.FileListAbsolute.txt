@@ -1,0 +1,15 @@
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.csproj.AssemblyReference.cache
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.GeneratedMSBuildEditorConfig.editorconfig
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.AssemblyInfoInputs.cache
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.AssemblyInfo.cs
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.csproj.CoreCompileInputs.cache
+E:\Tobeto\CSharp\nLayerApp\Entitites\bin\Debug\net8.0\Entitites.deps.json
+E:\Tobeto\CSharp\nLayerApp\Entitites\bin\Debug\net8.0\Entitites.dll
+E:\Tobeto\CSharp\nLayerApp\Entitites\bin\Debug\net8.0\Entitites.pdb
+E:\Tobeto\CSharp\nLayerApp\Entitites\bin\Debug\net8.0\Core.dll
+E:\Tobeto\CSharp\nLayerApp\Entitites\bin\Debug\net8.0\Core.pdb
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.csproj.CopyComplete
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.dll
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\refint\Entitites.dll
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\Entitites.pdb
+E:\Tobeto\CSharp\nLayerApp\Entitites\obj\Debug\net8.0\ref\Entitites.dll
