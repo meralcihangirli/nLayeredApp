@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Tobeto\\CSharp\\nLayerApp\\Business\\Business.csproj": {}
+    "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Business\\Business.csproj": {}
   },
   "projects": {
-    "E:\\Tobeto\\CSharp\\nLayerApp\\Business\\Business.csproj": {
+    "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\Business\\Business.csproj",
+        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Business\\Business.csproj",
+        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
-        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Business\\obj\\",
+        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,14 +32,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj": {
-                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj"
+              "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj": {
+                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj"
               },
-              "E:\\Tobeto\\CSharp\\nLayerApp\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\DataAccess\\DataAccess.csproj"
+              "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\DataAccess\\DataAccess.csproj"
               },
-              "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj": {
-                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj"
+              "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj": {
+                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj"
               }
             }
           }
@@ -53,6 +53,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -73,14 +83,14 @@
         }
       }
     },
-    "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj": {
+    "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj",
+        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj",
+        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
-        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\obj\\",
+        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -117,9 +127,9 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "Octopus.Client": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[14.3.1013, )"
+              "version": "[8.0.0, )"
             },
             "System.Linq.Dynamic.Core": {
               "target": "Package",
@@ -146,14 +156,14 @@
         }
       }
     },
-    "E:\\Tobeto\\CSharp\\nLayerApp\\DataAccess\\DataAccess.csproj": {
+    "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\DataAccess\\DataAccess.csproj",
+        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
-        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\DataAccess\\obj\\",
+        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -174,8 +184,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj": {
-                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj"
+              "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj": {
+                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj"
               }
             }
           }
@@ -219,14 +229,14 @@
         }
       }
     },
-    "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj": {
+    "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj",
+        "projectUniqueName": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj",
         "projectName": "Entitites",
-        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\Entitites.csproj",
+        "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\Entitites.csproj",
         "packagesPath": "C:\\Users\\black\\.nuget\\packages\\",
-        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Entitites\\obj\\",
+        "outputPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Entitites\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -247,8 +257,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj": {
-                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\Core\\Core.csproj"
+              "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj": {
+                "projectPath": "E:\\Tobeto\\CSharp\\nLayerApp\\nLayeredApp\\Core\\Core.csproj"
               }
             }
           }

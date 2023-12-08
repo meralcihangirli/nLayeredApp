@@ -20,6 +20,8 @@ namespace Business
         {
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICourseService, CourseManager>();
+            services.AddAutoMapper(typeof(BusinessServiceRegistration));
             return services;
 
         }

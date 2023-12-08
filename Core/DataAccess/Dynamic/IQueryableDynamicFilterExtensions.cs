@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Core.DataAccess.Dynamic
-{
+{//dinamik filtreleme ve sıralama islemleri
     public static class IQueryableDynamicFilterExtensions
     {
         private static readonly string[] _orders = { "asc", "desc" };

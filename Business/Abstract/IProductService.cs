@@ -1,4 +1,6 @@
 ﻿
+using Business.Dtos.Request;
+using Business.Dtos.Response;
 using Core.DataAccess.Paging;
 using Entitites.Concretes;
 using System;
@@ -12,7 +14,7 @@ namespace Business.Abstract
     public interface IProductService
     {
         Task<IPaginate<Product>> GetListAsync();
-        Task Add(Product product);
+        Task<CreatedProductResponse> Add(CreateProductRequest createProductRequest);
 
         Task Update(Product product);
         Task Delete(Product product);

@@ -451,12 +451,12 @@ namespace Core.DataAccess.Repositories
             Context.Update(entity);
         }
 
-        Octopus.Client.Repositories.IPaginate<TEntity> IRepository<TEntity, TEntityId>.GetList(Expression<Func<TEntity, bool>>? predicate, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include, int index, int size, bool withDeleted, bool enableTracking)
+        IPaginate<TEntity> IRepository<TEntity, TEntityId>.GetList(Expression<Func<TEntity, bool>>? predicate, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include, int index, int size, bool withDeleted, bool enableTracking)
         {
             throw new NotImplementedException();
         }
 
-        Octopus.Client.Repositories.IPaginate<TEntity> IRepository<TEntity, TEntityId>.GetListByDynamic(DynamicQuery dynamic, Expression<Func<TEntity, bool>>? predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include, int index, int size, bool withDeleted, bool enableTracking)
+        IPaginate<TEntity> IRepository<TEntity, TEntityId>.GetListByDynamic(DynamicQuery dynamic, Expression<Func<TEntity, bool>>? predicate, Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>>? include, int index, int size, bool withDeleted, bool enableTracking)
         {
             throw new NotImplementedException();
         }

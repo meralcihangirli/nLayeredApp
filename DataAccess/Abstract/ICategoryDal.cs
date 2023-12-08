@@ -2,7 +2,6 @@
 using Core.DataAccess.Repositories;
 using Entitites.Concretes;
 using Microsoft.EntityFrameworkCore.Query;
-using Octopus.Client.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface ICategoryDal :IRepository<Category,int> ,IAsyncRepository<Category,int>   
+    public interface ICategoryDal :IRepository<Category,Guid> ,IAsyncRepository<Category, Guid>   
     {
        
     }

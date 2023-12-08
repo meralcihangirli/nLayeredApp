@@ -4,7 +4,6 @@ using DataAccess.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,13 +16,15 @@ namespace DataAccess
     {
         public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<NorthwindContext>(options => options.UseInMemoryDatabase("nArchitecture"));
+          //  services.AddDbContext<NorthwindContext>(options => options.UseInMemoryDatabase("nArchitecture"));
 
+            
+
+            services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(configuration.GetConnectionString("ETrade")));
             services.AddScoped<IProductDal, EfProductDal>();
             services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddScoped<ICourseDal, EfCourseDal>();
             return services;
-
-            //services.AddDbContext<BaseDbContext>(options => options.UseSq lServer(configuration.GetConnectionString("RentACar")));
         }
     }
 }

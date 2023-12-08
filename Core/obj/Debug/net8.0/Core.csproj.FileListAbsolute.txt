@@ -10,3 +10,16 @@ E:\Tobeto\CSharp\nLayerApp\Core\obj\Debug\net8.0\Core.dll
 E:\Tobeto\CSharp\nLayerApp\Core\obj\Debug\net8.0\refint\Core.dll
 E:\Tobeto\CSharp\nLayerApp\Core\obj\Debug\net8.0\Core.pdb
 E:\Tobeto\CSharp\nLayerApp\Core\obj\Debug\net8.0\ref\Core.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\bin\Debug\net8.0\Core.deps.json
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\bin\Debug\net8.0\Core.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\bin\Debug\net8.0\Core.pdb
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.sourcelink.json
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\refint\Core.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\Core.pdb
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\Core\obj\Debug\net8.0\ref\Core.dll

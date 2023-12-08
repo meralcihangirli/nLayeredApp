@@ -1,4 +1,6 @@
-﻿using Core.DataAccess.Paging;
+﻿using Business.Dtos.Request;
+using Business.Dtos.Response;
+using Core.DataAccess.Paging;
 using Entitites.Concretes;
 using System;
 using System.Collections.Generic;
@@ -11,7 +13,9 @@ namespace Business.Abstract
     public interface ICategoryService
     {
         Task<IPaginate<Category>> GetListAsync();
-        Task Add(Category category);
+        Task<CreatedCategoryResponse>  Add(CreateCategoryRequest createCategoryRequest);
+
+        List<GetListCategoryResponse> GetCategoryListAsync();
         Task Update(Category category);
         Task Delete(Category category);     
     }

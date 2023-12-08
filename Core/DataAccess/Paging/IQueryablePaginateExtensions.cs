@@ -14,7 +14,7 @@ namespace Core.DataAccess.Paging
             int index,
             int size,
             int from = 0,
-            CancellationToken cancellationToken = default
+            CancellationToken cancellationToken = default //CancellationToken, genellikle paralel veya asenkron işlemleri izlemek, durdurmak veya iptal etmek için kullanılır
         )
         {
             if (from > index)
