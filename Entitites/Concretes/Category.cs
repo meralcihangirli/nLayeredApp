@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entitites.Concretes
 {
-    public class Category:Entity<Guid>
+    public class Category:Entity<int>
     {
         public string? CategoryName { get; set; }
+        public List<Product> Products { get; set; }//bir kategorinin bir sürü nesnnesi var 
     }
 }

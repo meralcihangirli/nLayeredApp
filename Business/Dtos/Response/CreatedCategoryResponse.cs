@@ -8,7 +8,7 @@ namespace Business.Dtos.Response
 {
     public class CreatedCategoryResponse
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string? CategoryName { get; set; }
     }
 }

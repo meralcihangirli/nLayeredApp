@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.Rules;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using DataAccess.Contexts;
@@ -22,6 +23,7 @@ namespace Business
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICourseService, CourseManager>();
+            services.AddScoped<CategoryBusinessRules>();
            // services.AddAutoMapper(typeof(BusinessServiceRegistration));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;

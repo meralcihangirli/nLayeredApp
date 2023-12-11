@@ -8,7 +8,7 @@ namespace Business.Dtos.Response
 {
     public class UpdatedCategoryResponse
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string? CategoryName { get; set; }
         public DateTime UpdatedTime { get; set; } = DateTime.Now;
     }

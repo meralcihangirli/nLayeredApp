@@ -8,7 +8,7 @@ namespace Business.Dtos.Request
 {
     public class UpdateCategoryRequest
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string? CategoryName { get; set; }   
        
     }

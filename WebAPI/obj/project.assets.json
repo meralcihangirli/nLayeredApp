@@ -3313,6 +3313,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "Business >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
@@ -3365,6 +3366,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.4.0, )"

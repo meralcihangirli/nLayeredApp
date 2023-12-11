@@ -2,6 +2,7 @@
 using Business.Abstract;
 using Business.Dtos.Request;
 using Business.Dtos.Response;
+using Business.Rules;
 using Core.DataAccess.Paging;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
@@ -18,27 +19,32 @@ namespace Business.Concrete
     {
         ICourseDal _courseDal;
         IMapper _mapper;
+        
         public CourseManager(ICourseDal courseDal,IMapper mapper)
         {
             _courseDal = courseDal;
             _mapper = mapper;
+         
         }
 
         public async Task<CreatedCourseResponse> Add(CreateCourseRequest createCourseRequest)
         {
-           // Course course =new Course();
-           // course.Id = Guid.NewGuid();
-           // course.CourseName = createCourseRequest.CourseName;
-           // course.Description = createCourseRequest.Description;                   
-           // Course createdCourse = await _courseDal.AddAsync(course);
-           // CreatedCourseResponse createdCourseResponse = new CreatedCourseResponse();
-           // createdCourseResponse.Id=createdCourse.Id;
-           // createdCourseResponse.CourseName=createdCourse.CourseName;
-           // createdCourseResponse.Description=createdCourse.Description;
-           //return createdCourseResponse;
+            // Course course =new Course();
+            // course.Id = Guid.NewGuid();
+            // course.CourseName = createCourseRequest.CourseName;
+            // course.Description = createCourseRequest.Description;                   
+            // Course createdCourse = await _courseDal.AddAsync(course);
+            // CreatedCourseResponse createdCourseResponse = new CreatedCourseResponse();
+            // createdCourseResponse.Id=createdCourse.Id;
+            // createdCourseResponse.CourseName=createdCourse.CourseName;
+            // createdCourseResponse.Description=createdCourse.Description;
+            //return createdCourseResponse;
+            
            var course=_mapper.Map<Course>(createCourseRequest);
-            var createdCourse=await _courseDal.AddAsync(course);
-            var createdCourseResponse=_mapper.Map<CreatedCourseResponse>(createdCourse);
+            var createdCourse=await _courseDal.AddAsync(course);//bana kategori veriyor
+            var createdCourseResponse=_mapper.Map<CreatedCourseResponse>(createdCourse);//verilen kategorinin yannıtı dönüyor
+           // CreatedCategoryResponse createdCourseResponse=_mapper.Map<CreatedCategoryResponse>(createdCourse);
+
             return createdCourseResponse;
         }
 

@@ -2,6 +2,7 @@
 using Business.Abstract;
 using Business.Dtos.Request;
 using Business.Dtos.Response;
+using Business.Rules;
 using Core.DataAccess.Paging;
 using DataAccess.Abstract;
 using Entitites.Concretes;
@@ -18,10 +19,12 @@ namespace Business.Concrete
     {
         ICategoryDal _categoryDal;
         IMapper _mapper;
-        public CategoryManager(ICategoryDal categoryDal, IMapper mapper)
+        CategoryBusinessRules _categoryBusinessRules;
+        public CategoryManager(ICategoryDal categoryDal, IMapper mapper,CategoryBusinessRules categoryBusinessRules)
         {
             _categoryDal = categoryDal;
             _mapper = mapper;
+            _categoryBusinessRules = categoryBusinessRules;
         }
 
 
@@ -35,6 +38,7 @@ namespace Business.Concrete
             //  CreatedCategoryResponse createdCategoryResponse = new CreatedCategoryResponse();
             //  createdCategoryResponse.Id = createdCategory.Id;
             //  createdCategoryResponse.CategoryName = createCategory.CategoryName;
+            //await _categoryBusinessRules.MaximumCategoryCountIsTen();
             var category = _mapper.Map<Category>(createCategoryRequest);
             var createdCategory = await _categoryDal.AddAsync(category);
             var createdCategoryResponse = _mapper.Map<CreatedCategoryResponse>(createdCategory);

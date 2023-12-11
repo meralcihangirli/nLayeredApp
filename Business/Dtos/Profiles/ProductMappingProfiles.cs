@@ -17,7 +17,10 @@ namespace Business.Dtos.Profiles
         public ProductMappingProfiles()
         {
             CreateMap<Paginate<Product>,Paginate<GetListProductResponse>>().ReverseMap();
-            CreateMap<Product,GetListProductResponse>().ReverseMap();
+            CreateMap<Product, GetListProductResponse>().ForMember(destinationMember: p => p.CategoryName, memberOptions: opt => opt.MapFrom(p => p.Category.CategoryName)).ReverseMap();
+
+
+
             CreateMap<Product,UpdatedProductResponse>().ReverseMap();
             CreateMap<Product,DeletedProductResponse>().ReverseMap();
             CreateMap<Product, CreatedProductResponse>().ReverseMap();

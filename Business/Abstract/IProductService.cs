@@ -14,7 +14,7 @@ namespace Business.Abstract
     public interface IProductService
     {
         Task<CreatedProductResponse> Add(CreateProductRequest createProductRequest);
-        Task<IPaginate<GetListProductResponse>> GetProductListAsync();
+        Task<IPaginate<GetListProductResponse>> GetProductListAsync(PageRequest pageRequest);
         Task<UpdatedProductResponse> Update(UpdateProductRequest updateProductRequest);
         // Task<Product> GetProductById(int id);
         Task<DeletedProductResponse> Delete(DeleteProductRequest deleteProductRequest);
