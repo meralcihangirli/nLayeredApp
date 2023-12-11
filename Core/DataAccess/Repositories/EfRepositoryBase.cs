@@ -30,7 +30,7 @@ namespace Core.DataAccess.Repositories
 
         public async Task<TEntity> AddAsync(TEntity entity)
         {
-            entity.CreatedDate = DateTime.UtcNow;
+            entity.CreatedDate = DateTime.Now;
             await Context.AddAsync(entity);
             await Context.SaveChangesAsync();
             return entity;
@@ -39,7 +39,7 @@ namespace Core.DataAccess.Repositories
         public async Task<ICollection<TEntity>> AddRangeAsync(ICollection<TEntity> entities)
         {
             foreach (TEntity entity in entities)
-                entity.CreatedDate = DateTime.UtcNow;
+                entity.CreatedDate = DateTime.Now;
             await Context.AddRangeAsync(entities);
             await Context.SaveChangesAsync();
             return entities;
@@ -47,7 +47,7 @@ namespace Core.DataAccess.Repositories
 
         public async Task<TEntity> UpdateAsync(TEntity entity)
         {
-            entity.UpdatedDate = DateTime.UtcNow;
+            entity.UpdatedDate = DateTime.Now;
             Context.Update(entity);
             await Context.SaveChangesAsync();
             return entity;
@@ -56,7 +56,7 @@ namespace Core.DataAccess.Repositories
         public async Task<ICollection<TEntity>> UpdateRangeAsync(ICollection<TEntity> entities)
         {
             foreach (TEntity entity in entities)
-                entity.UpdatedDate = DateTime.UtcNow;
+                entity.UpdatedDate = DateTime.Now;
             Context.UpdateRange(entities);
             await Context.SaveChangesAsync();
             return entities;
@@ -161,7 +161,7 @@ namespace Core.DataAccess.Repositories
 
         public TEntity Add(TEntity entity)
         {
-            entity.CreatedDate = DateTime.UtcNow;
+            entity.CreatedDate = DateTime.Now;
             Context.Add(entity);
             Context.SaveChanges();
             return entity;
@@ -170,7 +170,7 @@ namespace Core.DataAccess.Repositories
         public ICollection<TEntity> AddRange(ICollection<TEntity> entities)
         {
             foreach (TEntity entity in entities)
-                entity.CreatedDate = DateTime.UtcNow;
+                entity.CreatedDate = DateTime.Now;
             Context.AddRange(entities);
             Context.SaveChanges();
             return entities;
@@ -178,7 +178,7 @@ namespace Core.DataAccess.Repositories
 
         public TEntity Update(TEntity entity)
         {
-            entity.UpdatedDate = DateTime.UtcNow;
+            entity.UpdatedDate = DateTime.Now;
             Context.Update(entity);
             Context.SaveChanges();
             return entity;
@@ -187,7 +187,7 @@ namespace Core.DataAccess.Repositories
         public ICollection<TEntity> UpdateRange(ICollection<TEntity> entities)
         {
             foreach (TEntity entity in entities)
-                entity.UpdatedDate = DateTime.UtcNow;
+                entity.UpdatedDate = DateTime.Now;
             Context.UpdateRange(entities);
             Context.SaveChanges();
             return entities;
@@ -406,7 +406,7 @@ namespace Core.DataAccess.Repositories
         {
             if (entity.DeletedDate.HasValue)
                 return;
-            entity.DeletedDate = DateTime.UtcNow;
+            entity.DeletedDate = DateTime.Now;
 
             var navigations = Context
                 .Entry(entity)

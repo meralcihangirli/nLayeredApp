@@ -13,10 +13,11 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        Task<IPaginate<Product>> GetListAsync();
         Task<CreatedProductResponse> Add(CreateProductRequest createProductRequest);
+        Task<IPaginate<GetListProductResponse>> GetProductListAsync();
+        Task<UpdatedProductResponse> Update(UpdateProductRequest updateProductRequest);
+        // Task<Product> GetProductById(int id);
+        Task<DeletedProductResponse> Delete(DeleteProductRequest deleteProductRequest);
 
-        Task Update(Product product);
-        Task Delete(Product product);
     }
 }

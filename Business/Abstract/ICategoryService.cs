@@ -12,11 +12,11 @@ namespace Business.Abstract
 {
     public interface ICategoryService
     {
-        Task<IPaginate<Category>> GetListAsync();
-        Task<CreatedCategoryResponse>  Add(CreateCategoryRequest createCategoryRequest);
+        //  Task<IPaginate<Category>> GetListAsync();
+        Task<CreatedCategoryResponse> Add(CreateCategoryRequest createCategoryRequest);
+        Task<IPaginate<GetListCategoryResponse>> GetCategoryListAsync();
+        Task<UpdatedCategoryResponse> Update(UpdateCategoryRequest updateCategoryRequest);
+        Task<DeletedCategoryResponse> Delete(DeleteCategoryRequest deleteCategoryRequest);
 
-        List<GetListCategoryResponse> GetCategoryListAsync();
-        Task Update(Category category);
-        Task Delete(Category category);     
     }
 }

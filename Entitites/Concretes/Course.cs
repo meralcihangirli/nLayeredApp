@@ -1,6 +1,4 @@
-﻿
-using Core.Entitites;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Core.Entitites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +11,6 @@ namespace Entitites.Concretes
     {
         public int CategoryId { get; set; }
         public string? Description { get; set; }
-
         public string? CourseName { get; set; }
 
     }

@@ -12,8 +12,10 @@ namespace DataAccess.Concrete
 {
     public class EfProductDal : EfRepositoryBase<Product, Guid, NorthwindContext>, IProductDal
     {
+        NorthwindContext _context;
         public EfProductDal(NorthwindContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

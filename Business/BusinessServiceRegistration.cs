@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,8 @@ namespace Business
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICourseService, CourseManager>();
-            services.AddAutoMapper(typeof(BusinessServiceRegistration));
+           // services.AddAutoMapper(typeof(BusinessServiceRegistration));
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
 
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core.DataAccess.Paging;
+using Entitites.Concretes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace Business.Dtos.Response
 {
-    public class GetListCategoryResponse
+    public class GetListCategoryResponse 
     {
-        public string? ProductName { get; set; }
-        public decimal UnitPrice { get; set; }
-        public short UnitsInStock {  get; set; }
-        public string? QuantityPerUnit { get; set; }
+        public Guid Id { get; set; }
+        public string? CategoryName { get; set; }
     }
+
 }

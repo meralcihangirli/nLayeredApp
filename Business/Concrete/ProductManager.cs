@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using AutoMapper;
+using Business.Abstract;
 using Business.Dtos.Request;
 using Business.Dtos.Response;
 using Core.DataAccess.Paging;
@@ -15,10 +16,12 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
+        IMapper _mapper;
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal,IMapper mapper)
         {
             _productDal = productDal;
+            _mapper = mapper;
         }
 
         public async Task<CreatedProductResponse> Add(CreateProductRequest createProductRequest)
@@ -42,20 +45,27 @@ namespace Business.Concrete
             return createdProductResponse;
         }
 
-        public async Task<IPaginate<Product>> GetListAsync()
+        public async Task<DeletedProductResponse> Delete(DeleteProductRequest deleteProductRequest)
         {
-            return await _productDal.GetListAsync();
+            var product=_mapper.Map<Product>(deleteProductRequest);
+            var deletedProduct= await _productDal.DeleteAsync(product,true);
+            var deletedProductResponse = _mapper.Map<DeletedProductResponse>(deletedProduct);
+            return deletedProductResponse;
         }
 
-        public Task Delete(Product product)
+        public async Task<IPaginate<GetListProductResponse>> GetProductListAsync()
         {
-            throw new NotImplementedException();
+            var productList= await _productDal.GetListAsync();
+            var mapped=_mapper.Map<Paginate<GetListProductResponse>>(productList);
+            return mapped;
         }
 
-       
-        public Task Update(Product product)
+        public async Task<UpdatedProductResponse> Update(UpdateProductRequest updateProductRequest)
         {
-            throw new NotImplementedException();
+            var product = _mapper.Map<Product>(updateProductRequest);
+            var updatedProduct= await _productDal.UpdateAsync(product);
+            var updatedProductResponse=_mapper.Map<UpdatedProductResponse>(updatedProduct);
+            return updatedProductResponse;
         }
     }
 }

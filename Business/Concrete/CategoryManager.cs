@@ -18,51 +18,55 @@ namespace Business.Concrete
     {
         ICategoryDal _categoryDal;
         IMapper _mapper;
-        public CategoryManager(ICategoryDal categoryDal,IMapper mapper)
+        public CategoryManager(ICategoryDal categoryDal, IMapper mapper)
         {
             _categoryDal = categoryDal;
             _mapper = mapper;
         }
 
 
-        public async Task<CreatedCategoryResponse> Add(CreateCategoryRequest createCategory)
+        public async Task<CreatedCategoryResponse> Add(CreateCategoryRequest createCategoryRequest)
         {
-          //Category category=new Category();
-          //  category.Id = Guid.NewGuid();
-          //  category.CategoryName=createCategory.CategoryName;
+            //Category category=new Category();
+            //  category.Id = Guid.NewGuid();
+            //  category.CategoryName=createCategory.CategoryName;
 
-          //  Category createdCategory=await _categoryDal.AddAsync(category);
-          //  CreatedCategoryResponse createdCategoryResponse = new CreatedCategoryResponse();
-          //  createdCategoryResponse.Id = createdCategory.Id;
-          //  createdCategoryResponse.CategoryName = createCategory.CategoryName;
-          Category category=_mapper.Map<Category>(createCategory);
-            Category createdCategory=await _categoryDal.AddAsync(category);
-            CreatedCategoryResponse createdCategoryResponse=_mapper.Map<CreatedCategoryResponse>(createdCategory);
-
-
+            //  Category createdCategory=await _categoryDal.AddAsync(category);
+            //  CreatedCategoryResponse createdCategoryResponse = new CreatedCategoryResponse();
+            //  createdCategoryResponse.Id = createdCategory.Id;
+            //  createdCategoryResponse.CategoryName = createCategory.CategoryName;
+            var category = _mapper.Map<Category>(createCategoryRequest);
+            var createdCategory = await _categoryDal.AddAsync(category);
+            var createdCategoryResponse = _mapper.Map<CreatedCategoryResponse>(createdCategory);
             return createdCategoryResponse;
         }
 
-        public async Task Delete(Category category)
+        public async Task<DeletedCategoryResponse> Delete(DeleteCategoryRequest deleteCategoryRequest)
         {
-            await _categoryDal.DeleteAsync(category);
+            var category = _mapper.Map<Category>(deleteCategoryRequest);
+            var deletedCategory = await _categoryDal.DeleteAsync(category,true);
+            var deletedCategoryResponse = _mapper.Map<DeletedCategoryResponse>(deletedCategory);
+            return deletedCategoryResponse;
+
         }
 
-        public List<GetListCategoryResponse> GetCategoryListAsync()
+        public async Task<IPaginate<GetListCategoryResponse>> GetCategoryListAsync()
         {
-            IPaginate<Category> categories = _categoryDal.GetList();
-            List<GetListCategoryResponse> response = _mapper.Map<List<GetListCategoryResponse>> (categories.Items);
-            return response;
+            var categories = await _categoryDal.GetListAsync();
+            var mapped = _mapper.Map<Paginate<GetListCategoryResponse>>(categories);
+            return mapped;
         }
 
-        public async Task<IPaginate<Category>> GetListAsync()
+
+        public async Task<UpdatedCategoryResponse> Update(UpdateCategoryRequest updateCategoyRequest)
         {
-            return await _categoryDal.GetListAsync();
+            var category = _mapper.Map<Category>(updateCategoyRequest);
+            var updatedcCategory = await _categoryDal.UpdateAsync(category);
+            var updatedCategoryResponse = _mapper.Map<UpdatedCategoryResponse>(updatedcCategory);
+            return updatedCategoryResponse;
         }
 
-        public async Task Update(Category category)
-        {
-           await _categoryDal.UpdateAsync(category);
-        }
+
+
     }
 }

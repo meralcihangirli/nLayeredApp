@@ -12,8 +12,10 @@ namespace DataAccess.Concrete
 {
     public class EfCategoryDal : EfRepositoryBase<Category, Guid, NorthwindContext>, ICategoryDal
     {
+        NorthwindContext _context;
         public EfCategoryDal(NorthwindContext context) : base(context)
         {
+            _context = context;
         }
     }
 }

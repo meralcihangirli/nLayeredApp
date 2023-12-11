@@ -12,8 +12,10 @@ namespace DataAccess.Concrete
 {
     public class EfCourseDal : EfRepositoryBase<Course, Guid, NorthwindContext>, ICourseDal
     {
+        NorthwindContext _context;
         public EfCourseDal(NorthwindContext context) : base(context)
         {
+            _context = context;
         }
     }
 }
