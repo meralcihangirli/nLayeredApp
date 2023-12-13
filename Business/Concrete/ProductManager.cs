@@ -2,6 +2,7 @@
 using Business.Abstract;
 using Business.Dtos.Request;
 using Business.Dtos.Response;
+using Business.Rules;
 using Core.DataAccess.Paging;
 using DataAccess.Abstract;
 using Entitites.Concretes;
@@ -18,11 +19,13 @@ namespace Business.Concrete
     {
         IProductDal _productDal;
         IMapper _mapper;
+        ProductBusinessRules _productBusinessRules;
 
-        public ProductManager(IProductDal productDal, IMapper mapper)
+        public ProductManager(IProductDal productDal, IMapper mapper,ProductBusinessRules productBusinessRules)
         {
             _productDal = productDal;
             _mapper = mapper;
+            _productBusinessRules = productBusinessRules;
         }
 
         public async Task<CreatedProductResponse> Add(CreateProductRequest createProductRequest)
@@ -43,7 +46,7 @@ namespace Business.Concrete
             // createdProductResponse.QuantityPerUnit = createdProduct.QuantityPerUnit;
             // createdProductResponse.UnitsInStock = createdProduct.UnitsInStock;
             // return createdProductResponse;
-
+            await _productBusinessRules.MaximumProductIsTwentyInCategory(createProductRequest.CategoryId);
             Product product = _mapper.Map<Product>(createProductRequest);
             Product createdProduct = await _productDal.AddAsync(product);
             CreatedProductResponse createdProductResponse = _mapper.Map<CreatedProductResponse>(createdProduct);

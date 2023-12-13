@@ -19,6 +19,8 @@ namespace Business.Dtos.Profiles
             CreateMap<Paginate<Product>,Paginate<GetListProductResponse>>().ReverseMap();
             CreateMap<Product, GetListProductResponse>().ForMember(destinationMember: p => p.CategoryName, memberOptions: opt => opt.MapFrom(p => p.Category.CategoryName)).ReverseMap();
 
+          
+            //CreateMap<Product, CreatedProductResponse>().ForMember(destinationMember: p => p.Id, memberOptions: opt => opt.MapFrom(p => p.Category.Id)).ReverseMap();
 
 
             CreateMap<Product,UpdatedProductResponse>().ReverseMap();

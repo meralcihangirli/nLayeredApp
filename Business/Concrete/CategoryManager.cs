@@ -38,7 +38,8 @@ namespace Business.Concrete
             //  CreatedCategoryResponse createdCategoryResponse = new CreatedCategoryResponse();
             //  createdCategoryResponse.Id = createdCategory.Id;
             //  createdCategoryResponse.CategoryName = createCategory.CategoryName;
-            //await _categoryBusinessRules.MaximumCategoryCountIsTen();
+
+            await _categoryBusinessRules.MaximumCategoryCountIsTen();
             var category = _mapper.Map<Category>(createCategoryRequest);
             var createdCategory = await _categoryDal.AddAsync(category);
             var createdCategoryResponse = _mapper.Map<CreatedCategoryResponse>(createdCategory);

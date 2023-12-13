@@ -1,4 +1,6 @@
-﻿using Core.Business.Rules;
+﻿using Business.Messages;
+using Core.Business.Rules;
+using Core.CrossCuttingConcerns.Exceptions.Types;
 using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
@@ -21,7 +23,8 @@ namespace Business.Rules
             var result= await _categoryDal.GetListAsync();
             if (result.Count >=10)
             {
-                throw new Exception("kategori sayısı maximum 10 olabilir");
+                throw new BusinessException(BusinessMessages.CategoryLimit);
+                //kendi hata sınıfımızı olusturduk
             }
         }
 

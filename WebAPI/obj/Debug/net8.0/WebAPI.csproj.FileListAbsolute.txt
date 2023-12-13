@@ -125,3 +125,6 @@ E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\runtimes\win\lib\
 E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\AutoMapper.dll
 E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\Tobeto\CSharp\nLayerApp\nLayeredApp\WebAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
