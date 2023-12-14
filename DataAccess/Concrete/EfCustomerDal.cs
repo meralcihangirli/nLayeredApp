@@ -12,7 +12,7 @@ namespace DataAccess.Concrete
 {
     public class EfCustomerDal : EfRepositoryBase<Customer, string, NorthwindContext>, ICustomerDal
     {
-        NorthwindContext _context;
+       // NorthwindContext _context;
         public EfCustomerDal(NorthwindContext context) : base(context)
         {
             NorthwindContext _context;

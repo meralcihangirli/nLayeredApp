@@ -2,6 +2,7 @@
 using Business.Abstract;
 using Business.Dtos.Request;
 using Business.Dtos.Response;
+using Business.Rules;
 using Core.DataAccess.Paging;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
@@ -18,13 +19,17 @@ namespace Business.Concrete
     {
         ICustomerDal _customerDal;
         IMapper _mapper;
-        public CustomerManager(ICustomerDal customerDal,IMapper mapper)
+        CustomerBusinessRules _customerBusinessRules;
+        public CustomerManager(ICustomerDal customerDal,IMapper mapper,CustomerBusinessRules customerBusinessRules)
         {
             _customerDal = customerDal;
             _mapper = mapper;
+            _customerBusinessRules = customerBusinessRules;
         }
         public async Task<CreatedCustomerResponse> Add(CreateCustomerRequest createCustomerRequest)
         {
+            await _customerBusinessRules.EachCityCanContainMax10Customers(createCustomerRequest.City);
+            await _customerBusinessRules.SameName(createCustomerRequest.ContactName);
             Customer customer = _mapper.Map<Customer>(createCustomerRequest);
             var createdCustomer= await _customerDal.AddAsync(customer);
             CreatedCustomerResponse result = _mapper.Map<CreatedCustomerResponse>(createdCustomer);
@@ -34,7 +39,7 @@ namespace Business.Concrete
         public async Task<DeletedCustomerResponse> Delete(DeleteCustomerRequest deleteCustomerRequest)
         {
             Customer customer = _mapper.Map<Customer>(deleteCustomerRequest);
-            var deletedCustomer = await _customerDal.DeleteAsync(customer);
+            var deletedCustomer = await _customerDal.DeleteAsync(customer,true);
             DeletedCustomerResponse result = _mapper.Map<DeletedCustomerResponse>(deletedCustomer);
             return result;
         }

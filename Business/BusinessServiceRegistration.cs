@@ -30,14 +30,15 @@ namespace Business
 
             services.AddScoped<CategoryBusinessRules>();
             services.AddScoped<ProductBusinessRules>();
+            services.AddScoped<CustomerBusinessRules>();
 
 
-            // services.AddAutoMapper(typeof(BusinessServiceRegistration));
+           // services.AddAutoMapper(typeof(BusinessServiceRegistration));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;
 
         }
-        
+
 
         public static IServiceCollection AddSubClassesOfType(
            this IServiceCollection services,
